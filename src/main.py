@@ -3,7 +3,7 @@
 
 import json
 import os
-from settings.config import config
+from config import config
 
 #ai.robots.txtのjsonデータからrobots.txt用データを生成する
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

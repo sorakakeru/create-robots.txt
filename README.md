@@ -4,7 +4,7 @@
 
 ## 使い方
 
-1. `/src/settings/config.py`で以下を設定する
+1. `/src/config.py`で以下を設定する
 
 - key: `robots.txt`を生成するディレクトリ（サイト名でなくてもOK）
 - value(list): `Disallow`に指定するディレクトリやファイルなど
