@@ -51,5 +51,3 @@ for key, value in config.items():
         f.write(site_list_txt + google_imagebot_txt + aibots_list_txt)
     except Exception as e:
         print(f"Error writing robots.txt for {key}: {e}")
-# 
-
