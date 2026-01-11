@@ -24,13 +24,20 @@ for key, value in json_load.items():
   aibot_txt = f"User-agent: {key}\nDisallow: /\n\n"
   aibots_list_txt += aibot_txt
 
+#Googlebot-Image botの`Disallow`設定
+google_imagebot_txt = "User-agent: Googlebot-Image\nDisallow: /\n"
+
 #指定サイトごとに独自ルールを追加してrobots.txtを生成する
 for key, value in config.items():
   if isinstance(value, list):
     site_list_txt = ""
     site_list_txt += "User-agent: *\n"
-    for item in value:
-      site_txt = f"Disallow: {item}\n"
+    for idx, item in enumerate(value):
+      if idx == len(value) - 1:
+        #最後のループのみ
+        site_txt = f"Disallow: {item}\n\n"
+      else:
+        site_txt = f"Disallow: {item}\n"
       site_list_txt += site_txt
 
     #ディレクトリが存在しなければ生成
@@ -41,7 +48,7 @@ for key, value in config.items():
     #ファイル書き込み
     try:
       with open(os.path.join(site_dir, "robots.txt"), 'w') as f:
-        f.write(site_list_txt + aibots_list_txt)
+        f.write(site_list_txt + google_imagebot_txt + aibots_list_txt)
     except Exception as e:
         print(f"Error writing robots.txt for {key}: {e}")
 # 

@@ -13,7 +13,7 @@
   - `User-agent: *`に対して設定されます
 
 > [!NOTE]
-> 生成される`robots.txt`は、上記の指定と各AIクローラーbot（使用ライブラリ参照）の`Disallow`指定が書き込まれます。
+> 生成される`robots.txt`は、上記の指定とGooglebot-Image、各AIクローラーbot（使用ライブラリ参照）の`Disallow`指定が書き込まれます。
 
 3. `main.py`を実行する
 
